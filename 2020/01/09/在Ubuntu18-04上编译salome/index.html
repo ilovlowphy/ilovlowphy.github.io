@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ilovlowphy的博客">
+    <meta name="keyword"  content="python, html, css, thought, javascript, design">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        在Ubuntu18.04上编译salome - ilovlowphy的博客 | ilovlowphy&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Write and thinking </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/ilovlowphy.jpg" />
+        </div>
+        <div class="name">
+            <i>ilovlowphy</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载-salome"><span class="toc-text">下载 salome</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sat工具包"><span class="toc-text">sat工具包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#salome安装"><span class="toc-text">salome安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#所需安装包汇总"><span class="toc-text">所需安装包汇总</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装时遇到的问题"><span class="toc-text">安装时遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#doxygen"><span class="toc-text">doxygen</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python"><span class="toc-text">python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mesa"><span class="toc-text">mesa</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lapack"><span class="toc-text">lapack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#boost"><span class="toc-text">boost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CAS"><span class="toc-text">CAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netgen"><span class="toc-text">netgen</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Write and thinking </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        在Ubuntu18.04上编译salome
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2020-01-09 11:13:52</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>在Ubuntu18.04版本上编译salome, 记录过程如下:</p>
+<h2 id="下载-salome"><a href="#下载-salome" class="headerlink" title="下载 salome"></a>下载 salome</h2><p>下载地址:<a href="https://www.salome-platform.org/downloads/current-version" target="_blank" rel="noopener">https://www.salome-platform.org/downloads/current-version</a></p>
+<p>选择 <a href="https://www.salome-platform.org/downloads/current-version/DownloadDistr?platform=OS1.UB18.04&amp;version=9.3.0" target="_blank" rel="noopener">Linux Ubuntu 18.04 64-bits</a>版本, 软件包内不仅包含了开箱即用的salome版本(BINARIES-UB18.04文件夹内), 还包含所有的源代码(ARCHIVES文件夹内), 以及sat工具包(salomeTools文件夹内). 详细内容可查看根目录下的readme文件. </p>
+<p>安装OPENGL请参考<a href="https://www.jianshu.com/p/f34fea694300?utm_source=oschina-app" target="_blank" rel="noopener">https://www.jianshu.com/p/f34fea694300?utm_source=oschina-app</a></p>
+<p>安装libgfortran4:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install libgfortran4:amd64</span><br></pre></td></tr></table></figure></p>
+<p>解压, 在解压目录里运行<code>./salome</code>即可启动开箱即用的salome</p>
+<h2 id="sat工具包"><a href="#sat工具包" class="headerlink" title="sat工具包"></a>sat工具包</h2><p><code>sat</code>是salome工具包, 可以用于准备, 编译, 测试等等</p>
+<blockquote>
+<p>The SalomeTools (sat) is a suite of commands that can be used to perform operations on SALOME 1 .<br>For example, sat allows you to compile SALOME’s codes (prerequisites, products) create application, run tests,create package, etc.</p>
+</blockquote>
+<p>相关说明可以查看SALOME-xx/salometools目录下的pdf文件夹里的pdf说明(以上引用出自该文档)</p>
+<p>运行<code>./sat</code>命令时, 可能会出现Command ‘python’ not found错误, 系统本身已经默认安装了python3.6, 需要创建一个软连接,操作如下:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> /usr/bin</span></span><br><span class="line"><span class="meta">$</span><span class="bash">sudo ln -s python3.6 python</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>–help or -h<br>Get help as simple text.<br>sat –help # get the list of existing commands<br>sat –help compile # get the help on a specific command ‘compile’</p>
+</blockquote>
+<blockquote>
+<p>–debug or -g<br>Execution in debug mode allows to see more trace and stack if an exception is raised.<br>–verbose or -v<br>Change verbosity level (default is 3).<br># for product ‘SALOME_xx’ for example<br># execute compile command in debug mode with trace level 4<br>sat -g -v 4 compile SALOME_xx</p>
+</blockquote>
+<blockquote>
+<p>Use sat -t to duplicate the logs in the terminal (by default the log are stored and displayed with sat log<br>command):<br>sat -t compile <application> –products <product1></product1></application></p>
+</blockquote>
+<h2 id="salome安装"><a href="#salome安装" class="headerlink" title="salome安装"></a>salome安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">./sat prepare SALOME-9.3.0 <span class="comment">#准备安装包,将ARCHIVES文件下的压缩包解压至SOURCES目录下</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash">./sat compile SALOME-9.3.0 --stop_first_fail <span class="comment">#编译安装salome. Stop the compilation as soon as the compilation of a module fails</span></span></span><br></pre></td></tr></table></figure>
+<p>如果那个安装包未安装成功单独运行<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$./sat -t -v <span class="number">4</span> compile SALOME<span class="number">-9.3</span><span class="number">.0</span> --product &lt;product1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在输出中查看问题出在哪里, 多数原因是缺少必要的依赖包.</p>
+<p>可以apt-file工具, 该软件可以查找所需的文件在哪个软件包中,  详情查看下边连接<br><a href="https://www.jianshu.com/p/9fd19418cf83" target="_blank" rel="noopener">https://www.jianshu.com/p/9fd19418cf83</a><br>也可从下方网站搜索缺失的文件属于那个安装包<br><a href="https://packages.ubuntu.com/search?suite=xenial&amp;section=all&amp;arch=any&amp;keywords=libTKService.so&amp;searchon=contents" target="_blank" rel="noopener">https://packages.ubuntu.com/search?suite=xenial&amp;section=all&amp;arch=any&amp;keywords=libTKService.so&amp;searchon=contents</a></p>
+<p>例如使用如下命令搜索libTKService.so<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="keyword">file</span> <span class="keyword">search</span> libTKService.<span class="keyword">so</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>带dev的包(如python-dev,libdianewcanvas2-dev等)包含了头文件和静态库。</p>
+</blockquote>
+<blockquote>
+<p>For the first product in compilation error, you can check in the LOGS directory its compilation log to see where the error comes from.<br>Usually, it is because an included file is missing in the system. So use apt-file search to search in which package this file belongs. Then apt-get install the missing package.<br>Then launch again the compilation of the product, for instance:<br>./sat compile SALOME-8.4.0 –stop_first_fail -p sip<br><a href="https://www.salome-platform.org/forum/forum_9/890484993" target="_blank" rel="noopener">来源</a></p>
+</blockquote>
+<h3 id="所需安装包汇总"><a href="#所需安装包汇总" class="headerlink" title="所需安装包汇总"></a>所需安装包汇总</h3><p>软件包编译时出现的错误基本都是由于缺少必要的依赖包造成, 现将其汇总在下方:<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo apt-<span class="built_in">get</span> install flex bison zlib1g zlib1g.<span class="built_in">dev</span> pkg-config gfortran libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libbz2-<span class="built_in">dev</span> liboce-visualization11 liboce-visualization-<span class="built_in">dev</span> automake</span><br></pre></td></tr></table></figure></p>
+<p>————————————–以下可以不用看—————————————-</p>
+<h2 id="安装时遇到的问题"><a href="#安装时遇到的问题" class="headerlink" title="安装时遇到的问题"></a>安装时遇到的问题</h2><h3 id="doxygen"><a href="#doxygen" class="headerlink" title="doxygen"></a>doxygen</h3><p>编译doxygen时遇到如下错误:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CMake Error at <span class="regexp">/home/</span>jj<span class="regexp">/SALOME-9.3.0-UB18.04-SRC/</span>INSTALL<span class="regexp">/cmake/</span>share<span class="regexp">/cmake-3.12/</span>Modules/FindPackageHandleStandardArgs.<span class="string">cmake:</span><span class="number">137</span> (message):</span><br><span class="line">  Could NOT find FLEX (<span class="string">missing:</span> FLEX_EXECUTABLE)</span><br></pre></td></tr></table></figure></p>
+<p>解决方法:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install flex bison</span><br></pre></td></tr></table></figure></p>
+<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>安装python时遇到如下错误:<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zipimport.ZipImportError: can<span class="symbol">'t</span> decompress data; zlib <span class="keyword">not</span> available</span><br></pre></td></tr></table></figure></p>
+<p>解决方法:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-<span class="builtin-name">get</span> install zlib1g</span><br><span class="line">$ sudo apt-<span class="builtin-name">get</span> install zlib1g.dev</span><br></pre></td></tr></table></figure></p>
+<h3 id="mesa"><a href="#mesa" class="headerlink" title="mesa"></a>mesa</h3><p>安装mesa时遇到如下错误:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">configure: error: The pkg-config<span class="built_in"> script </span>could <span class="keyword">not</span> be found <span class="keyword">or</span> is too old.  Make sure it</span><br><span class="line">is <span class="keyword">in</span> your PATH <span class="keyword">or</span> <span class="builtin-name">set</span> the PKG_CONFIG environment variable <span class="keyword">to</span> the full</span><br><span class="line">path <span class="keyword">to</span> pkg-config.</span><br></pre></td></tr></table></figure></p>
+<p>解决方法:<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install pkg-config</span><br></pre></td></tr></table></figure></p>
+<h3 id="lapack"><a href="#lapack" class="headerlink" title="lapack"></a>lapack</h3><p>安装lapack时遇到如下错误:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-- The Fortran <span class="keyword">compiler</span> identification <span class="keyword">is</span> unknown</span><br><span class="line">CMake Error at CMakeLists.tx<span class="variable">t:3</span> (project):</span><br><span class="line">  No CMAKE_Fortran_COMPILER could <span class="keyword">be</span> found.</span><br></pre></td></tr></table></figure></p>
+<p>解决方法:<br>安装Fortran编译器<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install gfortran</span><br></pre></td></tr></table></figure></p>
+<h3 id="boost"><a href="#boost" class="headerlink" title="boost"></a>boost</h3><p><a href="https://www.cnblogs.com/qq952693358/p/8563048.html" target="_blank" rel="noopener">https://www.cnblogs.com/qq952693358/p/8563048.html</a><br>在安装boost时遇到如下错误：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gcc<span class="selector-class">.compile</span><span class="selector-class">.c</span>++ bin.v2/libs/iostreams/build/gcc-<span class="number">4.9</span>.<span class="number">4</span>/release/link-static/threading-multi/bzip2.o</span><br><span class="line">libs/iostreams/src/bzip2<span class="selector-class">.cpp</span>:<span class="number">20</span>:<span class="number">56</span>: fatal error: bzlib<span class="selector-class">.h</span>: No such file or directory</span><br><span class="line"> <span class="selector-id">#include</span> <span class="string">"bzlib.h"</span>  <span class="comment">// Julian Seward's "bzip.h" header.</span></span><br><span class="line">                                                        ^</span><br><span class="line">compilation terminated.</span><br></pre></td></tr></table></figure>
+<p>搜索后发现Boost依赖bzlib.h尚未安装，通过以下步骤解决问题：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install libboost-all-dev</span><br><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install libbz2-dev</span><br></pre></td></tr></table></figure></p>
+<h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>安装CAS时遇到如下错误:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">src<span class="regexp">/TKService/</span>CMakeFiles<span class="regexp">/TKService.dir/</span>build.<span class="string">make:</span><span class="number">440</span>: recipe <span class="keyword">for</span> target <span class="string">'lin64/gcc/lib/libTKService.so.7.3.0'</span> failed</span><br></pre></td></tr></table></figure></p>
+<p>安装缺失的软件包<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install liboce-visualization11 liboce-visualization-dev</span><br></pre></td></tr></table></figure></p>
+<h3 id="netgen"><a href="#netgen" class="headerlink" title="netgen"></a>netgen</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scripts/netgen_5_3_1.sh: line 13: aclocal: command <span class="keyword">not</span> found</span><br><span class="line"><span class="builtin-name">error</span> on<span class="built_in"> manual </span>call <span class="keyword">to</span> aclocal</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install automake</span><br></pre></td></tr></table></figure>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        <li>
+            <a target="_blank" href="https://twitter.com/ilovlowphy">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-twitter"></i>
+                            </span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ilovlowphy">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/ilovlowphy">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/ilovlowphy">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://www.ilovlowphy.tk">ilovlowphy</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://ilovlowphy.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+</html>
